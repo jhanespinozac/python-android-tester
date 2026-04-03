@@ -13,16 +13,21 @@ jobs:
           python-version: '3.12'
 
       - name: Install Flet
-        run: pip install flet
+        run: |
+          pip install --upgrade pip
+          pip install flet
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.22.0'
+          flutter-version: '3.22.2'
+
+      - name: Accept Android Licenses
+        run: yes | flutter doctor --android-licenses || true
 
       - name: Build APK
-        run: flet build apk
-
+        run: yes | flet build apk
+        
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
