@@ -1,0 +1,5 @@
+[tool.flet]
+app_title = "Mi App Proba"
+product_name = "ProbaApp"
+executable_name = "proba_app"
+bundle_id = "com.jhan.probaapp"
